@@ -1,0 +1,53 @@
+{% extends "gallery/header.html" %}
+
+{% block content %}      
+
+{% load crispy_forms_tags %}
+<head>
+
+
+
+<style>
+    .container-div{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        margin: 12px auto;
+    }
+    .image{
+   
+        margin: 48px auto;
+    }
+    .desc{
+        text-alignment:center;
+        font-weight:400;
+        font-size:24px;
+    }
+    .buttons{
+        display:flex;
+       
+        flex-direction:row;
+        justify-content:space-around;
+    }
+</style>
+</head>
+<div class="container-div">
+    <div class="desc">
+        {{photo.description}}
+    </div>
+    <div class="image">
+        <img src={{photo.image.url}} alt="">
+    </div>
+    
+    <div class="buttons">
+  
+    
+        <a href="{% url 'delete-image' photo.id %}" class="btn btn-danger m-5">Delete</a>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

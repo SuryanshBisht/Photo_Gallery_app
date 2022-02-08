@@ -1,0 +1,64 @@
+{% extends "gallery/header.html" %}
+
+{% block content %}      
+
+{% load crispy_forms_tags %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">   
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card" >
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item " style="text-alignment:center;!important" >
+                            Categories
+                        </li>
+                        <li class="list-group-item p-0">
+                            <a href={%url 'gallery'%}?username={{username}}
+                            style="text-decoration:none;width:100%;"
+                            class="btn btn-light"
+                            >All</a>
+                        </li>
+                        {%for category in categories%}
+                        <li class="list-group-item p-0">
+                            <a href={%url 'gallery'%}?category={{category.name}}
+                             style="text-decoration:none; width:100%;"
+                             class="btn btn-light">
+                                {{category.name}}
+                            </a>
+                        </li>
+                        {%endfor%}
+
+                      
+                    
+                    </ul> 
+                </div>
+                
+                
+                
+            </div>
+
+            <div class="col-md-9">
+                <div class="row">
+
+                    {%for photo in photos%}
+                    <div class="col-md-4 " >
+                        <div class="card my-2" >
+                            <img src={{photo.image.url}} class="card-img-top" alt="#">
+                            <div class="card-body">
+                                <p>Category:{{photo.category.name}}</p>
+                            </div>
+                            <a href={%url 'viewphoto' photo.id%} class="btn btn-outline-dark btn-sm- m-1">
+                                View
+                            </a>
+                        </div>
+                    </div>
+                    {%empty%}
+                    <h3>No Photos......</h3>
+                    {% endfor %}
+                </div>
+                
+            </div>
+        </div>
+    </div>
+   {% endblock %}
