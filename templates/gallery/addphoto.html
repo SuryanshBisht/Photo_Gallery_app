@@ -8,7 +8,7 @@
         <div class="row  justify-content-center">
             <div class="col-md-4">
                 
-                <form name = 'myForm' method="post" action="" enctype="multipart/form-data">
+                <form name = 'myForm' method="post" action="" enctype="multipart/form-data" >
                     {% csrf_token %}
                     <div class="input-group mb-3">
                         <select name='category' class="form-select"  id="inputGroupSelect02">
@@ -30,14 +30,15 @@
                         <label  class="form-label">Description</label>
                         <input required name="description" class="form-control" placeholder="Enter the description here" type="text" id="formFile">
                     </div>
-                    <button class="btn btn-primary" type='submit' onclick="validateAndSend()">Add Photo</button>
+                    <button class="btn btn-primary" onclick = "event.returnValue = validateAndSend()" >Add Photo</button>
                 </form>
             </div>
         </div>
     </div>
     <script>
         function validateAndSend() {
-            if(myForm.new_category.value==='' && myForm.category.value === 'none'){
+            console.log("funciton runned");
+            if(myForm.new_category.value ==='' && myForm.category.value === 'none'){
                 alert('You have to enter at least one category.');
                 return false;
             }
