@@ -55,7 +55,7 @@ def deleteImage(request,pk):
     if len(image.image) > 0:
         os.remove(image.image.path)
     image.delete()
-    messages.success(request,"Image Deleted Successfuly")
+    messages.success(request,"Image Deleted Successfully")
     return redirect('gallery')
 
 def register_request(request):
