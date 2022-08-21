@@ -1,9 +1,9 @@
 # Photo_Gallery_app
 
 Setup Instructions:
-
 1. download and open the folder Photo_Gallery in your local environment in any IDE.
 2. open a terminal and run the following commands to install the required dependencies (skip if already installed )
+
 ```
 pip install django
 pip install django-crispy-forms
