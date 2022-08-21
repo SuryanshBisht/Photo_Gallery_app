@@ -8,6 +8,9 @@
 
 
 <style>
+    {% comment %} *{
+        outline : 1px solid red;
+    } {% endcomment %}
     .container-div{
         display:flex;
         flex-direction:column;
@@ -16,8 +19,13 @@
         margin: 12px auto;
     }
     .image{
-   
         margin: 48px auto;
+        width : 90%;
+        height : 75%;
+    }
+    img{
+        max-height : 100% ;
+        max-width : 100%;
     }
     .desc{
         text-alignment:center;
@@ -26,7 +34,6 @@
     }
     .buttons{
         display:flex;
-       
         flex-direction:row;
         justify-content:space-around;
     }
@@ -37,12 +44,10 @@
         {{photo.description}}
     </div>
     <div class="image">
-        <img src={{photo.image.url}} alt="">
+        <img src={{photo.image.url}} alt="" style = "{object-fit : contain}">
     </div>
     
     <div class="buttons">
-  
-    
         <a href="{% url 'delete-image' photo.id %}" class="btn btn-danger m-5">Delete</a>
     </div>
 </div>

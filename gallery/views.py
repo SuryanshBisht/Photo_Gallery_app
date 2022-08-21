@@ -42,7 +42,7 @@ def addphoto(request):
             category,created  = Category.objects.get_or_create(user = request.user, name = data['new_category'])
         else:
             category=None
-        photo = Photo.objects.create(user = request.user, category = category,description = data['description'],image = image )
+        photo = Photo.objects.create(user = request.user, category = category,description = data['description'],image = image)
         photo.save()
         return redirect('gallery')
     context = {

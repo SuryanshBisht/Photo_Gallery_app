@@ -37,9 +37,14 @@
     </div>
     <script>
         function validateAndSend() {
-            console.log("funciton runned");
+            {% comment %} console.log("function runned"); {% endcomment %}
             if(myForm.new_category.value ==='' && myForm.category.value === 'none'){
                 alert('You have to enter at least one category.');
+                return false;
+            }
+            else if(myForm.new_category.value !== '' 
+                && myForm.category.value !== 'none'){
+                alert('Conflict in categories founded. \n Please select one category and continue.');
                 return false;
             }
             return true;
