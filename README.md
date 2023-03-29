@@ -1,7 +1,11 @@
 # Photo_Gallery_app
 
 Setup Instructions:
-1. download and open the folder Photo_Gallery in your local environment in any IDE.
+1. download and open the folder Photo_Gallery in your local environment in any IDE or
+  clone the repo using
+```
+git clone https://github.com/SuryanshBisht/Photo_Gallery_app.git
+```
 2. open a terminal and run the following commands to install the required dependencies (skip if already installed)
 
 ```
@@ -17,7 +21,7 @@ py manage.py runserver
 
 Features:
 
-1. My photo gallery app allows a user to upload and view any number of images
+1. This Photo gallery app allows a user to upload and view any number of images
 he wants on the gallery page.
 2. Every added photo must belong to a category which can be used to filter them
 later on in the gallery
